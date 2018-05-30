@@ -1,0 +1,22 @@
+﻿@model IEnumerable<string>
+@Html.ActionLink("Wszystkie kategorie", "Index", "Operations", new {
+    controller = "Operations",
+    action = "Index",
+    carModel = "all",
+    page = 1
+},
+    new { @class = "btn btn-block btn-default btn-lg" + (ViewBag.SelectedCarModel == "all" ? " btn-primary" : "")})
+
+
+@foreach (var link in Model)
+{
+    @Html.RouteLink(link, new {
+        controller = "Operations",
+        action = "Index",
+        carModel = link,
+        page = 1
+    }, new {
+        @class = "btn btn-block btn-default btn-lg"
+                 + (link == ViewBag.SelectedCarModel ? " btn-primary" : "")
+    })
+}

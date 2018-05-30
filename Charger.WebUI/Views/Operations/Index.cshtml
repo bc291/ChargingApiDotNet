@@ -1,0 +1,15 @@
+﻿@using Charger.WebUI.Helper
+@model Charger.WebUI.Models.OperationListModel
+
+@{
+    ViewBag.Title = "Operacje ładowania";
+}
+
+@foreach (var p in Model.Operations) {
+    @Html.Partial("ProductSummary", p);
+}
+
+<div class=" btn-group pull-right">
+    @Html.PageLinks(Model.PagingInfo, x => Url.Action("Index",
+        new {page = x, carModel = Model.CurrentCarModel}))
+</div>

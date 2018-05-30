@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2027
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Charger.WebUI", "Charger.WebUI\Charger.WebUI.csproj", "{77838F83-0F9F-4228-AB66-1B89BCBF9CF0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Charger.Domm", "Charger.Domm\Charger.Domm.csproj", "{31386B58-93A2-47A1-BE32-8ABE863754D1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{77838F83-0F9F-4228-AB66-1B89BCBF9CF0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77838F83-0F9F-4228-AB66-1B89BCBF9CF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77838F83-0F9F-4228-AB66-1B89BCBF9CF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77838F83-0F9F-4228-AB66-1B89BCBF9CF0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{31386B58-93A2-47A1-BE32-8ABE863754D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31386B58-93A2-47A1-BE32-8ABE863754D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31386B58-93A2-47A1-BE32-8ABE863754D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31386B58-93A2-47A1-BE32-8ABE863754D1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6FFAA1A3-404F-4F2C-8474-B4034FBDBAF0}
+	EndGlobalSection
+EndGlobal

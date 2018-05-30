@@ -1,0 +1,38 @@
+﻿@model Charger.Domm.Entities.ChOperation
+@{
+    ViewBag.Title = "Administracja: edycja " + @Model.carModel;
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<div class="panel">
+    <div class="panel-heading">
+        <h3>Edycja @Model.carModel</h3>
+    </div>
+
+    @using (Html.BeginForm("Edit", "Admin",
+        FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        <div class="panel-body">
+            @Html.HiddenFor(m => m.id)
+            @foreach (var property in ViewData.ModelMetadata.Properties)
+            {
+               
+                        <div class="form-group">
+                            <label>@(property.DisplayName ?? property.PropertyName)</label>
+                                @Html.TextBox(property.PropertyName, null,
+                                    new {@class = "form-control"})
+                            @Html.ValidationMessage(property.PropertyName)
+                        </div>
+                
+            }
+
+
+        </div>
+        <div class="panel-footer">
+            <input type="submit" value="Zapisz" class="btn btn-primary" />
+            @Html.ActionLink("Anuluj i wróć do listy", "Index", null, new
+            {
+                @class = "btn btn-default"
+            })
+        </div>
+    }
+</div>
