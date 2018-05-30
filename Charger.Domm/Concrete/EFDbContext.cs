@@ -11,9 +11,11 @@ namespace Charger.Domm.Concrete
     public class EFDbContext : DbContext
     {
         public DbSet<ChOperation> ChOperations { set; get; }
+        public DbSet<Customer> Customers { set; get; }
 
         public EFDbContext() :base("EFDbContext")
         {
         }
+
     }
 }

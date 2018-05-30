@@ -1,9 +1,11 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Web.Mvc;
 
 namespace Charger.Domm.Entities
 {
+    [Table("ChargOperations")]
     public class ChOperation
     {
         [HiddenInput(DisplayValue = false)]
@@ -34,5 +36,8 @@ namespace Charger.Domm.Entities
         [Required(ErrorMessage = "Proszę podać czas zakończenia ładowania")]
         [Display(Name = "Czas zakończenia ładowania")]
         public string dateAndTime { get; set; }
+
+        public int CustomerId { get; set; }
+        public Customer Customer { set; get; }
     }
 }
