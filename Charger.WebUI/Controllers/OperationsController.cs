@@ -26,8 +26,7 @@ namespace Charger.WebUI.Controllers
         {
 
             var context = iOperationsRepository.DbGetContext();
-            context.ChOperations.AddRange(new List<ChOperation>()
-                {
+            context.ChOperations.Add(
                     new ChOperation()
                     {
                         averagePower = 43.43f,
@@ -43,7 +42,7 @@ namespace Charger.WebUI.Controllers
                             FullName = "testoweImie",
                             Name = "testowaNazwa"
                         }
-                    }
+                    
                 }
             );
 
