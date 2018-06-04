@@ -38,6 +38,6 @@ namespace Charger.Domm.Entities
         public string dateAndTime { get; set; }
 
         public int CustomerId { get; set; }
-        public Customer Customer { set; get; }
+        public virtual Customer Customer { set; get; }
     }
 }

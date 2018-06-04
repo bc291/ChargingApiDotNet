@@ -24,31 +24,6 @@ namespace Charger.WebUI.Controllers
 
         public ViewResult Index(string carModel = "all", int page = 1)
         {
-
-            var context = iOperationsRepository.DbGetContext();
-            context.ChOperations.Add(
-                    new ChOperation()
-                    {
-                        averagePower = 43.43f,
-                        carModel = "testowySam",
-                        capacityCharged = 23f,
-                        cost = 23f,
-                        elapsedTime = 34.3434f,
-                        dateAndTime = "testowaGodzina",
-                        initialCapacity = 342f,
-                        Customer = new Customer()
-                        {
-                            Address = "testowyAdres",
-                            FullName = "testoweImie",
-                            Name = "testowaNazwa"
-                        }
-                    
-                }
-            );
-
-            context.SaveChanges();
-
-
             if (carModel == "all")
             {
                 OperationListModel operationListModel2 = new OperationListModel()

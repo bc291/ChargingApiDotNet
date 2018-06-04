@@ -8,7 +8,7 @@
         <h3>Edycja @Model.carModel</h3>
     </div>
 
-    @using (Html.BeginForm("Edit", "Admin",
+    @using (Html.BeginForm("OperationsEdit", "Admin",
         FormMethod.Post, new { enctype = "multipart/form-data" }))
     {
         <div class="panel-body">
@@ -29,7 +29,7 @@
         </div>
         <div class="panel-footer">
             <input type="submit" value="Zapisz" class="btn btn-primary" />
-            @Html.ActionLink("Anuluj i wróć do listy", "Index", null, new
+            @Html.ActionLink("Anuluj i wróć do listy", "OperationsIndex", null, new
             {
                 @class = "btn btn-default"
             })

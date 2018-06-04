@@ -25,6 +25,11 @@ namespace Charger.Domm.Concrete
             return iOperationsRepository.ChOperations;
         }
 
+        public IEnumerable<Customer> GetCustomers()
+        {
+            return iOperationsRepository.Customers;
+        }
+
         public void InsertCharging(ChOperation chOperation)
         {
             var context = iOperationsRepository.DbGetContext();
@@ -51,6 +56,26 @@ namespace Charger.Domm.Concrete
             return chOperationSwap;
         }
 
+        public Customer SaveCustomer(Customer customer)
+        {
+            var context = iOperationsRepository.DbGetContext();
+            Customer customerSwap = context.Customers.Find(customer.CustomerId);
+            if (customerSwap != null)
+            {
+                customerSwap.Address = customer.Address;
+                customerSwap.FullName = customer.FullName;
+                customerSwap.Name = customer.Name;
+            }
+            else
+            {
+                customerSwap = new Customer() { Name = customer.Name, FullName = customer.FullName, Address = customer.Address };
+                context.Customers.Add(customerSwap);
+            }
+          
+            context.SaveChanges();
+            return customerSwap;
+        }
+
         public bool DeleteCharging(int id)
         {
             var context = iOperationsRepository.DbGetContext();
@@ -61,6 +86,20 @@ namespace Charger.Domm.Concrete
                 context.SaveChanges();
                 return true;
             }
+            return false;
+        }
+
+        public bool DeleteCustomer(int customerId)
+        {
+            var context = iOperationsRepository.DbGetContext();
+            Customer customer = context.Customers.Find(customerId);
+            if (customer != null)
+            {
+                context.Customers.Remove(customer);
+                context.SaveChanges();
+                return true;
+            }
+
             return false;
         }
     }

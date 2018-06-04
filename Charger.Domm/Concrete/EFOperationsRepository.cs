@@ -16,6 +16,12 @@ namespace Charger.Domm.Concrete
         {
             get { return context.ChOperations; }
         }
+
+        public IEnumerable<Customer> Customers
+        {
+            get { return context.Customers; }
+        }
+
         public EFDbContext DbGetContext()
         {
             return context;

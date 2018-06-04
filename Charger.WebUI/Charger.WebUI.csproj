@@ -188,11 +188,14 @@
     <Content Include="Views\Operations\Index.cshtml" />
     <Content Include="Views\Shared\ProductSummary.cshtml" />
     <Content Include="Scripts\jquery-1.9.0.min.map" />
-    <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Admin\OperationsIndex.cshtml" />
     <Content Include="Views\Shared\_AdminLayout.cshtml" />
-    <Content Include="Views\Admin\Edit.cshtml" />
+    <Content Include="Views\Admin\OperationsEdit.cshtml" />
     <Content Include="Views\Acc\Login.cshtml" />
     <Content Include="Views\Nav\Menu.cshtml" />
+    <Content Include="Views\Admin\CustomersIndex.cshtml" />
+    <Content Include="Views\Admin\EditCustomer.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -11,6 +11,7 @@ namespace Charger.Domm.Abstract
    public interface IOperationsRepository
     {
         IEnumerable<ChOperation> ChOperations { get; }
+        IEnumerable<Customer> Customers { get; }
         EFDbContext DbGetContext();
     }
 }
