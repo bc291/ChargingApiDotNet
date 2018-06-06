@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity.Validation;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -33,8 +34,24 @@ namespace Charger.Domm.Concrete
         public void InsertCharging(ChOperation chOperation)
         {
             var context = iOperationsRepository.DbGetContext();
-            context.ChOperations.Add(chOperation);
-            context.SaveChanges();
+           
+            try
+            {
+                context.ChOperations.Add(chOperation);
+                context.SaveChanges();
+            }
+            catch (DbEntityValidationException dbEx)
+            {
+                foreach (var validationErrors in dbEx.EntityValidationErrors)
+                {
+                    foreach (var validationError in validationErrors.ValidationErrors)
+                    {
+                        System.Console.WriteLine("Property: {0} Error: {1}", validationError.PropertyName, validationError.ErrorMessage);
+                    }
+                }
+            }
+
+
         }
 
         public ChOperation SaveCharging(ChOperation chOperation)

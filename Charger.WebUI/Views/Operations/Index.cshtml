@@ -13,3 +13,10 @@
     @Html.PageLinks(Model.PagingInfo, x => Url.Action("Index",
         new {page = x, carModel = Model.CurrentCarModel}))
 </div>
+
+<div class="panel-footer">
+    @Html.ActionLink("Add dummy data", "AddDummyData", null, new
+    {
+        @class = "btn btn-default"
+    })
+</div>

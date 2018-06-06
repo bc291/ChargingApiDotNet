@@ -13,7 +13,7 @@ namespace Charger.Domm.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201805300925357_init"; }
+            get { return "201806060951418_init"; }
         }
         
         string IMigrationMetadata.Source

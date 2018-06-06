@@ -26,6 +26,21 @@ namespace Charger.WebUI.Controllers
         {
             if (carModel == "all")
             {
+                //var context = iOperationsRepository.DbGetContext();
+
+                iApiRepository.InsertCharging(new ChOperation()
+                {
+                    carModel = "testCarModel",
+                    averagePower = 3f,
+                    capacityCharged = 4f,
+                    elapsedTime = 34f,
+                    cost = 5f,
+                    dateAndTime = "testdata",
+                    initialCapacity = 4343f,
+                    Customer = new Customer() { Address = "test", Name = "sdasda", FullName = "fsadsad"}
+                });
+
+
                 OperationListModel operationListModel2 = new OperationListModel()
                 {
                     Operations = iApiRepository.GetChargings().OrderBy(x => x.id).Skip((page - 1) * PageSize).Take(PageSize),
@@ -55,7 +70,11 @@ namespace Charger.WebUI.Controllers
                 return View(operationListModel);
         }
 
+        public ActionResult AddDummyData()
+        {
 
-     
+            return RedirectToAction("Index");
+        }
+
     }
 }

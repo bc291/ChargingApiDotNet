@@ -30,9 +30,9 @@ namespace Charger.Domm.Migrations
                 c => new
                     {
                         CustomerId = c.Int(nullable: false, identity: true),
-                        Name = c.String(),
-                        FullName = c.String(),
-                        Address = c.String(),
+                        Name = c.String(nullable: false),
+                        FullName = c.String(nullable: false),
+                        Address = c.String(nullable: false),
                     })
                 .PrimaryKey(t => t.CustomerId);
             

@@ -53,7 +53,7 @@ namespace Charger.WebUI.Controllers
             {
                 iApiRepository.SaveCharging(chOperation);
                 TempData["message"] = string.Format("Zapisano {0} ", chOperation.carModel);
-                return RedirectToAction("OpeartionsIndex");
+                return RedirectToAction("OperationsIndex");
             }
 
             return View(chOperation);
